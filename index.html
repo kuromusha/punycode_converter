@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Punycode Converter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="canonical" href="https://n7.com/punycode/" />
+<style>
+html {font-size: 3vw; background-color: #e0ffff;}
+@media (min-width: 500px) {html {font-size: 2.5vw;}}
+@media (min-width: 900px) {html {font-size: 2vw;}}
+@media (min-width: 1200px) {html {font-size: 125%;}}
+</style>
+<script src="punycode.min.js"></script>
+<script src="script.js"></script>
+</head>
+<body>
+<h1>Punycode Converter</h1>
+<noscript>
+JavaScript must be enabled to use this tool.
+</noscript>
+<h2>Input Unicode or Punycode</h2>
+<form action="./" method="post" id="input_form" name="input_form">
+<textarea cols="54" rows="4" wrap="soft" name="input_text" onkeyup="encode()" onmousedown="encode()" onpaste="setTimeout(function(){encode()},10)" placeholder="input here"></textarea>
+<br />
+<h2>Conversion Result</h2>
+<textarea cols="54" rows="4" wrap="soft" readonly="readonly" name="output_text" onfocus="this.select()" placeholder="result is output here"></textarea>
+<br />
+<input type="button" name="copy_text" value="Copy to Clipboard" onclick="clipCopyText()" onkeypress="clipCopyText()" />
+</form>
+<hr />
+<a href="https://n7.com/japanese/">Japanese URL version</a>
+<hr />
+&copy; 2022 <a href="https://n7.com/punycode/">N7.com</a>
+</body>
+</html>
