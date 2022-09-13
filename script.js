@@ -67,7 +67,7 @@ function _to_puny(s) {
     let i, index, mode, ret = '';
     for (i = index = mode = 0; i < s.length; i++) {
         let c = s.charCodeAt(i);
-        if (c != 0x2d && c < 0x30 || c > 0x39 && c < 0x41 || c > 0x5a && c < 0x61 || c > 0x7a && c <= 0xff) {
+        if (c != 0x2d && c < 0x30 || c > 0x39 && c < 0x41 || c > 0x5a && c < 0x61 || c > 0x7a && c <= 0x7f) {
             if (mode != 0) {
                 let tmp = s.substr(index, i - index);
                 if (mode == 2) {
@@ -83,7 +83,7 @@ function _to_puny(s) {
                 index = i;
                 mode = 1;
             }
-            if (c > 0xff) {
+            if (c > 0x7f) {
                 mode = 2;
             }
         }
